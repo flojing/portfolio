@@ -4,17 +4,16 @@
   font-weight: 400;
 
   /* Définition des couleurs */
-  --color-chocolate: #221109;
-  --color-cream: #f5f0e1;
-  --color-blue: #4a6d8c;
+  --color-chocolate: #291F17;
+  --color-cream: #F4F3F0;
+  --color-blue: #07BAE5;
   --color-dark-blue: #2c4053;
 
   /* Thème sombre par défaut */
-  color-scheme: light dark;
+  color-scheme: dark;
   color: var(--color-cream);
   background-color: var(--color-chocolate);
   --accent-color: var(--color-blue);
-  --secondary-text: #d1c7b7; /* Variante plus claire de crème */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,7 +35,6 @@ a {
   :root {
     color: var(--color-chocolate);
     background-color: var(--color-cream);
-    --accent-color: var(--color-dark-blue);
-    --secondary-text: #5d4b3a; /* Variante plus claire de marron */
+    --accent-color: var(--color-blue);
   }
 }

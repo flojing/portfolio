@@ -1,0 +1,16 @@
+.navbar-container {
+    display: flex;
+    padding: 12px;
+}
+
+.navbar-logo {
+    width: 50px;
+    height: auto;
+}
+  
+.navbar-left-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
