@@ -1,0 +1,42 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Définition des couleurs */
+  --color-chocolate: #221109;
+  --color-cream: #f5f0e1;
+  --color-blue: #4a6d8c;
+  --color-dark-blue: #2c4053;
+
+  /* Thème sombre par défaut */
+  color-scheme: light dark;
+  color: var(--color-cream);
+  background-color: var(--color-chocolate);
+  --accent-color: var(--color-blue);
+  --secondary-text: #d1c7b7; /* Variante plus claire de crème */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-chocolate);
+    background-color: var(--color-cream);
+    --accent-color: var(--color-dark-blue);
+    --secondary-text: #5d4b3a; /* Variante plus claire de marron */
+  }
+}
