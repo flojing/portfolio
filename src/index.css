@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo+Expanded:wght@400;500;600;700&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Définition des variables de police */
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: "Archivo Expanded", "Arial Black", sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
   /* Définition des couleurs */
-  --color-chocolate: #291F17;
-  --color-cream: #F4F3F0;
-  --color-blue: #07BAE5;
+  --color-chocolate: #291f17;
+  --color-cream: #f4f3f0;
+  --color-blue: #57d4f2;
   --color-dark-blue: #2c4053;
 
   /* Thème sombre par défaut */
@@ -21,9 +26,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Application des polices */
 body {
+  font-family: var(--font-body);
   margin: 0;
   min-height: 100vh;
+}
+
+/* Application de la police pour les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 a {

@@ -1,0 +1,169 @@
+/* Conteneur principal - toujours à la même position */
+.burger-menu-container {
+  position: fixed;
+  width: 42px; /* Diamètre du cercle */
+  height: 42px; /* Diamètre du cercle */
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  overflow: visible;
+}
+
+/* Cercle bleu de fond - celui qui s'anime */
+.burger-circle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-blue);
+  border-radius: 50%;
+  transition: all 0.8s ease-in-out;
+  transform-origin: top right;
+  z-index: -1;
+  will-change: transform, width, height, border-radius;
+}
+
+/* Animation du cercle bleu */
+.burger-menu-container.expanded .burger-circle {
+  transform: none;
+  width: 100vw;
+  height: 500px;
+  border-radius: 12px;
+  top: 0;
+  right: 0;
+}
+
+/* État étendu du conteneur */
+.burger-menu-container.expanded {
+  width: 100vw;
+  height: 300px;
+  border-radius: 12px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  z-index: 120;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.burger-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 30;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  transform: none;
+  transition: none;
+}
+
+.burger-button:focus-visible {
+  outline: 2px solid var(--color-chocolate);
+  outline-offset: 2px;
+}
+
+.burger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-chocolate);
+  transition: all 0.5s ease;
+  border-radius: 2px;
+}
+
+.burger-button.open .burger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-button.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button.open .burger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-items {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  width: calc(100% - 32px);
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
+.burger-menu-container.expanded .menu-items {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+}
+
+.menu-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-items li {
+  margin-bottom: 15px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.burger-menu-container.expanded .menu-items li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.burger-menu-container.expanded .menu-items li:nth-child(1) {
+  transition-delay: 0.3s;
+}
+
+.burger-menu-container.expanded .menu-items li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.burger-menu-container.expanded .menu-items li:nth-child(3) {
+  transition-delay: 0.5s;
+}
+
+.menu-items a {
+  color: var(--color-chocolate);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+  display: block;
+  text-align: right;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.menu-items a:hover {
+  color: var(--color-cream);
+}
+
+.burger-menu-container.expanded .burger-button {
+  z-index: 110;
+}

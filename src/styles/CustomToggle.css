@@ -46,9 +46,9 @@
 /* Icône de la lune (centrée dans le handle gauche) */
 .moon-icon {
     position: absolute;
-    top: 17px; /* Centre vertical */
-    left: 17px; /* Centre du handle gauche (5px + 24px/2) */
-    transform: translate(-50%, -50%); /* Centre l'icône */
+    top: 17px; 
+    left: 17px; 
+    transform: translate(-50%, -50%); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,9 +62,9 @@
 /* Icône du soleil (centrée dans le handle droit) */
 .sun-icon {
     position: absolute;
-    top: 17px; /* Centre vertical */
-    left: 43px; /* Centre du handle droit (5px + 26px + 24px/2) */
-    transform: translate(-50%, -50%); /* Centre l'icône */
+    top: 17px; 
+    left: 43px; 
+    transform: translate(-50%, -50%); 
     display: flex;
     align-items: center;
     justify-content: center;
