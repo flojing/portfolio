@@ -1,15 +1,13 @@
-/* Conteneur principal - toujours à la même position */
 .burger-menu-container {
   position: fixed;
-  width: 42px; /* Diamètre du cercle */
-  height: 42px; /* Diamètre du cercle */
+  width: 42px;
+  height: 42px;
   top: 12px;
   right: 12px;
   z-index: 100;
   overflow: visible;
 }
 
-/* Cercle bleu de fond - celui qui s'anime */
 .burger-circle {
   position: fixed;
   top: 12px;
@@ -24,7 +22,6 @@
   will-change: transform, width, height, border-radius;
 }
 
-/* Animation du cercle bleu */
 .burger-menu-container.expanded .burger-circle {
   transform: none;
   width: 100vw;
@@ -34,12 +31,10 @@
   right: 0;
 }
 
-/* État étendu du conteneur */
 .burger-menu-container.expanded {
   width: 100vw;
-  height: 300px;
+  height: 500px;
   border-radius: 12px;
-  padding: 16px;
   position: fixed;
   top: 0;
   right: 0;
@@ -99,23 +94,25 @@
 .menu-items {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease;
-  width: calc(100% - 32px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  padding-top: 30px;
-  padding-right: 30px;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-top: 100px;
+  pointer-events: none;
 }
 
 .burger-menu-container.expanded .menu-items {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.2s;
+  pointer-events: auto;
+  transition: opacity 0.3s ease 0.4s, visibility 0s;
 }
 
 .menu-items ul {
@@ -123,13 +120,22 @@
   padding: 0;
   margin: 0;
   width: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.burger-menu-container:not(.expanded) .menu-items ul {
+  opacity: 0;
 }
 
 .menu-items li {
   margin-bottom: 15px;
   transform: translateY(10px);
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .burger-menu-container.expanded .menu-items li {
@@ -137,33 +143,123 @@
   opacity: 1;
 }
 
+.burger-menu-container:not(.expanded) .burger-circle,
+.burger-menu-container:not(.expanded) .menu-items {
+  transition-duration: 0.2s !important;
+  transition-delay: 0s !important;
+}
+
+.burger-menu-container:not(.expanded) .menu-items li {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  transition-delay: 0s !important;
+}
+
 .burger-menu-container.expanded .menu-items li:nth-child(1) {
+  transform: translateY(0);
+  opacity: 1;
   transition-delay: 0.3s;
+  align-self: flex-start;
+  padding-left: 16px;
 }
 
 .burger-menu-container.expanded .menu-items li:nth-child(2) {
+  transform: translateY(0);
+  opacity: 1;
   transition-delay: 0.4s;
+  align-self: flex-start;
+  padding-left: 16px;
 }
 
 .burger-menu-container.expanded .menu-items li:nth-child(3) {
+  transform: translateY(0);
+  opacity: 1;
   transition-delay: 0.5s;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: fit-content;
+  border-radius: 25px;
+  padding: 5px 24px;
+}
+
+.menu-items li:nth-child(3) a {
+  text-align: center;
 }
 
 .menu-items a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--color-chocolate);
   text-decoration: none;
   font-size: 18px;
   transition: color 0.2s;
-  display: block;
-  text-align: right;
+  width: 100%;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 700;
 }
 
-.menu-items a:hover {
-  color: var(--color-cream);
+.menu-items a svg {
+  stroke-width: 2px;
+  width: 24px;
+  height: 24px;
 }
 
 .burger-menu-container.expanded .burger-button {
   z-index: 110;
+}
+
+.menu-items li.socials {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 30px;
+  transition-delay: 0.6s;
+}
+
+.menu-items li.socials svg {
+  width: 36px;
+  height: 36px;
+  color: var(--color-chocolate);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.burger-menu-container.expanded .menu-items li.socials {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+
+.burger-menu-container.expanded .menu-items li:nth-child(5) {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+
+.menu-items li.burger-footer-image {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  transition-delay: 0.7s;
+  z-index: 1;
+}
+
+.menu-items li.burger-footer-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.burger-menu-container.expanded .menu-items li.burger-footer-image {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.7s;
 }

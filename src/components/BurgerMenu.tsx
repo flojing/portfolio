@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../styles/BurgerMenu.css";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { LuArrowRight } from "react-icons/lu";
+import FlorentinMonteilBurgerFooter from "../assets/florentin_monteil_footer_mobile.svg";
 
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +25,27 @@ export default function BurgerMenu() {
       <nav className="menu-items">
         <ul>
           <li>
-            <a href="#a-propos">À propos</a>
+            <a href="#a-propos">
+              À propos de moi <LuArrowRight />
+            </a>
           </li>
           <li>
-            <a href="#projets">Projets</a>
+            <a href="#projets">
+              Projets <LuArrowRight />
+            </a>
           </li>
           <li>
             <a href="#contact">Contact</a>
+          </li>
+          <li className="socials">
+            <FaLinkedinIn />
+            <FaGithub />
+          </li>
+          <li className="burger-footer-image">
+            <img
+              src={FlorentinMonteilBurgerFooter}
+              alt="Florentin Monteil"
+            />{" "}
           </li>
         </ul>
       </nav>
