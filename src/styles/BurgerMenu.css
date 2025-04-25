@@ -56,7 +56,6 @@
   height: 18px;
   background: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
   z-index: 30;
   -webkit-tap-highlight-color: transparent;
@@ -223,7 +222,6 @@
   width: 36px;
   height: 36px;
   color: var(--color-chocolate);
-  cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
