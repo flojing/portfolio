@@ -42,10 +42,7 @@ export default function BurgerMenu() {
             <FaGithub />
           </li>
           <li className="burger-footer-image">
-            <img
-              src={FlorentinMonteilBurgerFooter}
-              alt="Florentin Monteil"
-            />{" "}
+            <img src={FlorentinMonteilBurgerFooter} alt="Florentin Monteil" />
           </li>
         </ul>
       </nav>
