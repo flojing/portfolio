@@ -257,7 +257,7 @@
 }
 
 .burger-menu-container.expanded .menu-items li.burger-footer-image {
-  transform: translateY(0);
+  transform: translateY(1px);
   opacity: 1;
   transition-delay: 0.7s;
 }

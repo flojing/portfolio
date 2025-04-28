@@ -25,10 +25,11 @@
 }
 
 .project-1-image {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+  transform: translateX(-50px);
 }
 
 .project-1-container {
@@ -49,10 +50,11 @@
 }
 
 .project-2-image {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+  transform: translateX(50px);
 }
 
 .project-2-container {
@@ -75,10 +77,11 @@
 }
 
 .project-3-image {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+  transform: translateX(-50px);
 }
 
 .project-3-container {

@@ -1,8 +1,8 @@
 import "../styles/MyWork.css";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-import Projet3Screen from "../assets/MarioRankTab.png";
-import Projet1Screen from "../assets/PokemonArenaDesktop.png";
-import Projet2Screen from "../assets/WildyGamyDesktop.png";
+import Projet1Screen from "../assets/mockup_Pokemon.png";
+import Projet2Screen from "../assets/mockup_WildyGamy.png";
+import Projet3Screen from "../assets/mockup_mario.png";
 
 export default function MyWork() {
   return (
