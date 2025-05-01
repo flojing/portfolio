@@ -1,10 +1,32 @@
 import "../styles/MyWork.css";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
+import { useInView } from "react-intersection-observer";
 import Projet1Screen from "../assets/mockup_Pokemon.png";
 import Projet2Screen from "../assets/mockup_WildyGamy.png";
 import Projet3Screen from "../assets/mockup_mario.png";
+import KeywordsContainer from "./KeywordsContainer";
+
+function useScrollAnimation(threshold = 0.1) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  return { ref, controls };
+}
 
 export default function MyWork() {
+  const project1 = useScrollAnimation();
+  const project2 = useScrollAnimation();
+  const project3 = useScrollAnimation();
   return (
     <div className="my-work-container">
       <div>
@@ -14,7 +36,16 @@ export default function MyWork() {
           réaliser ou sur lesquels j'ai pu travailler.
         </p>
       </div>
-      <div className="project-1-container">
+      <motion.div
+        ref={project1.ref}
+        className="project-1-container"
+        initial={{ x: 100, opacity: 0 }}
+        animate={project1.controls}
+        variants={{
+          hidden: { x: 100, opacity: 0 }, // État caché (identique à initial)
+          visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
+        }}
+      >
         <div className="project-1-content">
           <img src={Projet1Screen} alt="Projet 1" className="project-1-image" />
           <h3 className="project-title">Pokémon Arena</h3>
@@ -24,19 +55,24 @@ export default function MyWork() {
             visant à choisir son Pokémon favori. Ce projet a été réalisé dans le
             cadre de ma formation, en groupe de 4.
           </p>
-          <div className="project-keywords-container">
-            <span className="keyword">Pokédex</span>
-            <span className="keyword">Tournoi</span>
-            <span className="keyword">Design</span>
-            <span className="keyword">React</span>
-            <span className="keyword">PokéAPI</span>
-          </div>
+          <KeywordsContainer
+            keywords={["Pokédex", "Tournoi", "Design", "React", "PokéAPI"]}
+          />
           <a href="f">
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>
-      </div>
-      <div className="project-2-container">
+      </motion.div>
+      <motion.div
+        ref={project2.ref}
+        className="project-2-container"
+        initial={{ x: -100, opacity: 0 }}
+        animate={project2.controls}
+        variants={{
+          hidden: { x: -100, opacity: 0 }, // État caché (identique à initial)
+          visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
+        }}
+      >
         <div className="project-2-content">
           <img src={Projet2Screen} alt="Projet 2" className="project-2-image" />
           <h3 className="project-title">Wildy Gamy</h3>
@@ -47,20 +83,31 @@ export default function MyWork() {
             types d'interactions. Ce projet a été réalisé dans le cadre de ma
             formation, en groupe de 4.
           </p>
-          <div className="project-keywords-container">
-            <span className="keyword">Interactif</span>
-            <span className="keyword">Sécurisé</span>
-            <span className="keyword">Modulaire</span>
-            <span className="keyword">React</span>
-            <span className="keyword">Express</span>
-            <span className="keyword">MySQL</span>
-          </div>
+          <KeywordsContainer
+            keywords={[
+              "Interactif",
+              "Sécurisé",
+              "Modulaire",
+              "React",
+              "Express",
+              "MySQL",
+            ]}
+          />
           <a className="project-link-right" href="f">
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>
-      </div>
-      <div className="project-3-container">
+      </motion.div>
+      <motion.div
+        ref={project3.ref}
+        className="project-3-container"
+        initial={{ x: 100, opacity: 0 }}
+        animate={project3.controls}
+        variants={{
+          hidden: { x: 100, opacity: 0 }, // État caché (identique à initial)
+          visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
+        }}
+      >
         <div className="project-3-content">
           <img src={Projet3Screen} alt="Projet 3" className="project-3-image" />
           <h3 className="project-title">Mario Rank</h3>
@@ -71,19 +118,21 @@ export default function MyWork() {
             des autres utilisateurs. Ce projet a été réalisé dans le cadre de ma
             formation, seul, en 48 heures.
           </p>
-          <div className="project-keywords-container">
-            <span className="keyword">Solo Rush</span>
-            <span className="keyword">Fun</span>
-            <span className="keyword">Drag & Drop</span>
-            <span className="keyword">React</span>
-            <span className="keyword">Express</span>
-            <span className="keyword">MySQL</span>
-          </div>
+          <KeywordsContainer
+            keywords={[
+              "Solo Rush",
+              "Fun",
+              "Drag & Drop",
+              "React",
+              "Express",
+              "MySQL",
+            ]}
+          />
           <a href="f">
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

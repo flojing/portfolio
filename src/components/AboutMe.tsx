@@ -1,9 +1,11 @@
 import "../styles/AboutMe.css";
-import { useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import { FaFigma, FaNode, FaReact } from "react-icons/fa6";
 import { SiExpress, SiMysql } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 import cvPDF from "/CV/cv_florentin_monteil.pdf";
 import FlorentinMonteilAboutMe from "../assets/florentin_monteil.svg";
 import FloLogoAboutMe from "../assets/logosvg.svg";
@@ -15,6 +17,18 @@ export default function AboutMe() {
       downloadLinkRef.current.click();
     }
   };
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden"); // Réinitialiser l'animation quand hors de vue
+    }
+  }, [controls, inView]);
 
   return (
     <div className="about-me-container">
@@ -50,7 +64,16 @@ export default function AboutMe() {
       >
         Télécharger
       </a>
-      <div className="tech-logos-container">
+      <motion.div
+        ref={ref}
+        className="tech-logos-container"
+        initial={{ x: -100, opacity: 0 }}
+        animate={controls}
+        variants={{
+          hidden: { x: -100, opacity: 0 },
+          visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
+        }}
+      >
         <FaReact />
         <BiLogoTypescript />
         <FaNode />
@@ -58,7 +81,7 @@ export default function AboutMe() {
         <SiMysql />
         <FaGithub />
         <FaFigma />
-      </div>
+      </motion.div>
     </div>
   );
 }

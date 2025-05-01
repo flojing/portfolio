@@ -102,6 +102,28 @@
   padding-right: 50px;
 }
 
+@keyframes hintScroll {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-hint-active {
+  animation: hintScroll 1.5s ease-in-out 2;
+}
+
 .project-keywords-container {
   display: flex;
   flex-wrap: nowrap;
