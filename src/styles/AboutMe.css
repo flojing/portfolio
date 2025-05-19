@@ -1,0 +1,68 @@
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px 20px 50px;
+  gap: 30px;
+}
+
+.about-me-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: brightness(0) saturate(100%) invert(93%) sepia(7%) saturate(95%)
+    hue-rotate(14deg) brightness(106%) contrast(96%);
+}
+
+:root[data-theme="light"] .about-me-image {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
+}
+
+.about-me-logo {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+:root[data-theme="light"] .about-me-logo {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
+}
+
+.about-me-button {
+  background-color: var(--color-blue);
+  color: var(--color-chocolate);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--font-body);
+}
+
+.tech-logos-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: clamp(6px, 1.5vw, 10px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 8px;
+}
+
+.tech-logos-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tech-logos-container svg {
+  width: clamp(24px, 6vw, 30px);
+  height: clamp(24px, 6vw, 30px);
+  flex-shrink: 0;
+}

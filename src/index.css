@@ -1,20 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo+Expanded:wght@400;500;600;700&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Définition des variables de police */
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: "Archivo Expanded", "Arial Black", sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
   /* Définition des couleurs */
-  --color-chocolate: #221109;
-  --color-cream: #f5f0e1;
-  --color-blue: #4a6d8c;
+  --color-chocolate: #291f17;
+  --color-cream: #f4f3f0;
+  --color-blue: #57d4f2;
   --color-dark-blue: #2c4053;
-
-  /* Thème sombre par défaut */
-  color-scheme: light dark;
-  color: var(--color-cream);
-  background-color: var(--color-chocolate);
-  --accent-color: var(--color-blue);
-  --secondary-text: #d1c7b7; /* Variante plus claire de crème */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,9 +20,52 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Thème sombre (défaut) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: var(--color-cream);
+  background-color: var(--color-chocolate);
+  --accent-color: var(--color-blue);
+}
+
+/* Thème clair */
+:root[data-theme="light"] {
+  color-scheme: light;
+  color: var(--color-chocolate);
+  background-color: var(--color-cream);
+  --accent-color: var(--color-blue);
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s
+    ease, filter 0.5s ease;
+}
+
+/* Pour éviter les transitions sur certains éléments qui pourraient causer des problèmes */
+.scroll-progress-bar,
+.burger-menu-container.expanded {
+  transition: none;
+}
+
+/* Application des polices */
 body {
+  font-family: var(--font-body);
   margin: 0;
   min-height: 100vh;
+}
+
+/* Application de la police pour les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  line-height: 1;
 }
 
 a {
@@ -36,7 +77,13 @@ a {
   :root {
     color: var(--color-chocolate);
     background-color: var(--color-cream);
-    --accent-color: var(--color-dark-blue);
-    --secondary-text: #5d4b3a; /* Variante plus claire de marron */
+    --accent-color: var(--color-blue);
   }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }

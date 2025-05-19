@@ -1,0 +1,128 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 50px 20px 50px;
+}
+
+.contact-main-title {
+  font-size: clamp(46px, 6vw, 58px);
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contact-socials svg {
+  width: 36px;
+  height: 36px;
+  color: var(--color-cream);
+}
+
+:root[data-theme="light"] .contact-socials svg {
+  color: var(--color-chocolate);
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--color-cream);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+:root[data-theme="light"] .form-group label {
+  color: var(--color-chocolate);
+}
+
+.required {
+  color: var(--color-blue);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--color-cream);
+  color: var(--color-cream);
+  padding: 8px 2px;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"] .form-group input,
+:root[data-theme="light"] .form-group textarea {
+  color: var(--color-chocolate);
+  border-bottom: 1px dashed var(--color-chocolate);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom: 1px solid var(--color-cream);
+}
+
+:root[data-theme="light"] .form-group input:focus,
+:root[data-theme="light"] .form-group textarea:focus {
+  border-bottom: 1px solid var(--color-chocolate);
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--color-cream);
+  padding: 8px 0;
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: 500;
+  gap: 18px;
+  font-family: var(--font-body);
+}
+
+:root[data-theme="light"] .submit-button {
+  color: var(--color-chocolate);
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--color-blue);
+}
+
+.contact-form-container {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.Toastify__close-button {
+  color: var(--color-chocolate) !important;
+  opacity: 1;
+}
