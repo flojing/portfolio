@@ -195,7 +195,6 @@
   text-decoration: none;
   font-size: 18px;
   transition: color 0.2s;
-  width: 100%;
   font-family: var(--font-body);
   font-weight: 700;
 }
@@ -212,10 +211,10 @@
 
 .menu-items li.socials {
   display: flex;
-  gap: 40px;
   justify-content: center;
   margin-top: 30px;
   transition-delay: 0.6s;
+  gap: 40px;
 }
 
 .menu-items li.socials svg {
@@ -223,6 +222,11 @@
   height: 36px;
   color: var(--color-chocolate);
   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-items li.socials a {
+  display: flex;
+  justify-content: center;
 }
 
 .burger-menu-container.expanded .menu-items li.socials {

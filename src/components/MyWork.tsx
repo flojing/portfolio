@@ -28,7 +28,7 @@ export default function MyWork() {
   const project2 = useScrollAnimation();
   const project3 = useScrollAnimation();
   return (
-    <div className="my-work-container">
+    <div id="projets" className="my-work-container">
       <div>
         <h2 className="my-work-main-title">Projets</h2>
         <p className="my-work-intro">
@@ -58,7 +58,11 @@ export default function MyWork() {
           <KeywordsContainer
             keywords={["Pokédex", "Tournoi", "Design", "React", "PokéAPI"]}
           />
-          <a href="f">
+          <a
+            href="https://pokemon-arenadex.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>
@@ -93,7 +97,12 @@ export default function MyWork() {
               "MySQL",
             ]}
           />
-          <a className="project-link-right" href="f">
+          <a
+            className="project-link-right"
+            href="https://github.com/flojing/js-toulouse-wildy-gamy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>
@@ -128,7 +137,11 @@ export default function MyWork() {
               "MySQL",
             ]}
           />
-          <a href="f">
+          <a
+            href="https://github.com/flojing/MarioRank"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Voir le projet <BsArrowRightCircleFill />
           </a>
         </div>

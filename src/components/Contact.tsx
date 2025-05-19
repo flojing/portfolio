@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <div className="contact-container">
+    <div id="contact" className="contact-container">
       <h2 className="contact-main-title">Contactez-moi</h2>
       <p>
         Vous avez une demande, une question, un projet, une proposition, envie
@@ -12,8 +12,20 @@ export default function Contact() {
         expériences, n'hésitez pas à me contacter!
       </p>
       <div className="contact-socials">
-        <FaLinkedinIn />
-        <FaGithub />
+        <a
+          href="https://www.linkedin.com/in/flomonteil/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn />
+        </a>
+        <a
+          href=" https://github.com/flojing/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
       </div>
 
       <div className="contact-form-container">

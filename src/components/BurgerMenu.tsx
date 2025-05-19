@@ -6,6 +6,9 @@ import FlorentinMonteilBurgerFooter from "../assets/florentin_monteil_footer_mob
 
 export default function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className={`burger-menu-container ${isOpen ? "expanded" : ""}`}>
@@ -25,21 +28,38 @@ export default function BurgerMenu() {
       <nav className="menu-items">
         <ul>
           <li>
-            <a href="#a-propos">
+            {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+            <a href="#a-propos" onClick={handleLinkClick}>
               À propos de moi <LuArrowRight />
             </a>
           </li>
           <li>
-            <a href="#projets">
+            {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+            <a href="#projets" onClick={handleLinkClick}>
               Projets <LuArrowRight />
             </a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            {/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
+            <a href="#contact" onClick={handleLinkClick}>
+              Contact
+            </a>
           </li>
           <li className="socials">
-            <FaLinkedinIn />
-            <FaGithub />
+            <a
+              href="https://www.linkedin.com/in/flomonteil/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href=" https://github.com/flojing/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
           </li>
           <li className="burger-footer-image">
             <img src={FlorentinMonteilBurgerFooter} alt="Florentin Monteil" />

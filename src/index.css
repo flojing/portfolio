@@ -81,9 +81,19 @@ a {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+}
+
+#projets,
+#contact {
+  scroll-margin-top: 70px;
+  padding-top: 20px;
 }
