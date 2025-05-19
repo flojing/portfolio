@@ -31,7 +31,7 @@ export default function AboutMe() {
   }, [controls, inView]);
 
   return (
-    <div className="about-me-container">
+    <div id="a-propos" className="about-me-container">
       <img
         src={FlorentinMonteilAboutMe}
         alt="Florentin Monteil"

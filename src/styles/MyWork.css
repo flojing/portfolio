@@ -209,3 +209,18 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+@media (max-width: 768px) {
+  .project-1-content a:focus,
+  .project-2-content a:focus,
+  .project-3-content a:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .project-1-content a,
+  .project-2-content a,
+  .project-3-content a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
