@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio Florentin Monteil</title>
+  <script>
+    const segment = 1;
+    const l = window.location;
+    const repo = '/portfolio';
+    
+    const url = l.protocol + '//' + l.hostname + 
+          (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, segment + 1).join('/') + repo + '/?p=/' +
+          l.pathname.slice(1).split('/').slice(segment).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+    
+    window.location.href = url;
+  </script>
+</head>
+<body>
+  Redirection...
+</body>
+</html>
