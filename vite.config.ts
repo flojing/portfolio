@@ -5,4 +5,14 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   base: "/portfolio/",
+  build: {
+    outDir: "dist",
+    rollupOptions: {
+      output: {
+        entryFileNames: "assets/[name].[hash].js",
+        chunkFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash].[ext]",
+      },
+    },
+  },
 });
