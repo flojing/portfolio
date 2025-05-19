@@ -6,6 +6,11 @@
   padding-top: 50px;
 }
 
+:root[data-theme="light"] .footer-logo {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
+}
+
 .footer-florentin-monteil {
   width: 100%;
   height: auto;
@@ -14,4 +19,9 @@
   filter: brightness(0) saturate(100%) invert(93%) sepia(7%) saturate(95%)
     hue-rotate(14deg) brightness(106%) contrast(96%);
   padding-top: 30px;
+}
+
+:root[data-theme="light"] .footer-florentin-monteil {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
 }

@@ -1,76 +1,80 @@
 /* Conteneur principal du toggle */
 .custom-toggle {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    width: 60px;
-    height: 34px;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 60px;
+  height: 34px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Piste du toggle */
 .toggle-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #291F17;
-    border-radius: 34px;
-    transition: background-color 0.3s;
-    padding: 3px;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px 2px rgba(7, 186, 229, 0.5);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-chocolate);
+  border-radius: 34px;
+  transition: background-color 0.3s;
+  padding: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 2px rgba(7, 186, 229, 0.5);
 }
+
+/* :root[data-theme="light"] .toggle-track {
+  background-color: var(--color-cream);
+} */
 
 /* Bouton mobile (handle) */
 .toggle-handle {
-    position: absolute;
-    height: 24px;
-    width: 24px;
-    left: 5px;
-    top: 5px;
-    background-color: rgba(41, 31, 23, 0.9);
-    border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 5px 1px rgba(7, 186, 229, 0.4);
-    z-index: 2; /* Sous les icônes */
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 5px;
+  top: 5px;
+  background-color: rgba(41, 31, 23, 0.9);
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px 1px rgba(7, 186, 229, 0.4);
+  z-index: 2; /* Sous les icônes */
 }
 
 /* Bouton déplacé à droite quand activé */
 .custom-toggle.checked .toggle-handle {
-    transform: translateX(26px);
-    background-color: #F4F3F0;
-    box-shadow: 0 0 8px 2px rgba(7, 186, 229, 0.6);
+  transform: translateX(26px);
+  background-color: #f4f3f0;
+  box-shadow: 0 0 8px 2px rgba(7, 186, 229, 0.6);
 }
 
 /* Icône de la lune (centrée dans le handle gauche) */
 .moon-icon {
-    position: absolute;
-    top: 17px; 
-    left: 17px; 
-    transform: translate(-50%, -50%); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    color: #07BAE5;
-    z-index: 3;
-    pointer-events: none;
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #07bae5;
+  z-index: 3;
+  pointer-events: none;
 }
 
 /* Icône du soleil (centrée dans le handle droit) */
 .sun-icon {
-    position: absolute;
-    top: 17px; 
-    left: 43px; 
-    transform: translate(-50%, -50%); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    color: #07BAE5;
-    z-index: 3;
-    pointer-events: none;
+  position: absolute;
+  top: 17px;
+  left: 43px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #07bae5;
+  z-index: 3;
+  pointer-events: none;
 }

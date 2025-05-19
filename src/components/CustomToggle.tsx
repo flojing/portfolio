@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/CustomToggle.css";
 
 // Icônes SVG inline
@@ -56,6 +56,10 @@ export default function CustomToggle({
   initialState = false,
 }: CustomToggleProps) {
   const [isChecked, setIsChecked] = useState(initialState);
+
+  useEffect(() => {
+    setIsChecked(initialState);
+  }, [initialState]);
 
   const handleToggle = () => {
     const newState = !isChecked;

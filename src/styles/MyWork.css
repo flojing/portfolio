@@ -44,6 +44,12 @@
   position: relative;
 }
 
+:root[data-theme="light"] .project-1-container {
+  border-top: 2px solid var(--color-chocolate);
+  border-left: 2px solid var(--color-chocolate);
+  border-bottom: 2px solid var(--color-chocolate);
+}
+
 .project-1-content {
   max-width: 100%;
   padding-right: 50px;
@@ -68,6 +74,12 @@
   margin-left: -50px;
   position: relative;
   translate: 0 -1px;
+}
+
+:root[data-theme="light"] .project-2-container {
+  border-top: 2px solid var(--color-chocolate);
+  border-right: 2px solid var(--color-chocolate);
+  border-bottom: 2px solid var(--color-chocolate);
 }
 
 .project-2-content {
@@ -95,6 +107,12 @@
   margin-right: -50px;
   position: relative;
   translate: 0 -2px;
+}
+
+:root[data-theme="light"] .project-3-container {
+  border-top: 2px solid var(--color-chocolate);
+  border-left: 2px solid var(--color-chocolate);
+  border-bottom: 2px solid var(--color-chocolate);
 }
 
 .project-3-content {
@@ -154,6 +172,11 @@
   flex-shrink: 0;
 }
 
+:root[data-theme="light"] .keyword {
+  background-color: var(--color-chocolate);
+  color: var(--color-cream);
+}
+
 .project-1-content a,
 .project-2-content a,
 .project-3-content a {
@@ -165,6 +188,12 @@
   margin-top: 16px;
   text-decoration: none;
   font-size: 20px;
+}
+
+:root[data-theme="light"] .project-1-content a,
+:root[data-theme="light"] .project-2-content a,
+:root[data-theme="light"] .project-3-content a {
+  color: var(--color-chocolate);
 }
 
 .project-1-content a svg,

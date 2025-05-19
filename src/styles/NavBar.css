@@ -17,6 +17,11 @@
   height: auto;
 }
 
+:root[data-theme="light"] .navbar-logo {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
+}
+
 .navbar-left-container {
   display: flex;
   align-items: center;
@@ -30,4 +35,16 @@
   display: flex;
   align-items: center;
   justify-content: end;
+}
+
+.navbar-container {
+  background-color: var(--color-chocolate);
+}
+
+:root[data-theme="light"] .navbar-container {
+  background-color: var(--color-cream);
+}
+
+:root[data-theme="light"] .navbar-logo svg {
+  color: var(--color-chocolate);
 }

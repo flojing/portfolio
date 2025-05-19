@@ -26,7 +26,7 @@ export default function AboutMe() {
     if (inView) {
       controls.start("visible");
     } else {
-      controls.start("hidden"); // Réinitialiser l'animation quand hors de vue
+      controls.start("hidden");
     }
   }, [controls, inView]);
 

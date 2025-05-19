@@ -42,7 +42,7 @@ export default function MyWork() {
         initial={{ x: 100, opacity: 0 }}
         animate={project1.controls}
         variants={{
-          hidden: { x: 100, opacity: 0 }, // État caché (identique à initial)
+          hidden: { x: 100, opacity: 0 },
           visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
         }}
       >
@@ -69,7 +69,7 @@ export default function MyWork() {
         initial={{ x: -100, opacity: 0 }}
         animate={project2.controls}
         variants={{
-          hidden: { x: -100, opacity: 0 }, // État caché (identique à initial)
+          hidden: { x: -100, opacity: 0 },
           visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
         }}
       >
@@ -104,7 +104,7 @@ export default function MyWork() {
         initial={{ x: 100, opacity: 0 }}
         animate={project3.controls}
         variants={{
-          hidden: { x: 100, opacity: 0 }, // État caché (identique à initial)
+          hidden: { x: 100, opacity: 0 },
           visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
         }}
       >

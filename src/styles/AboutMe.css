@@ -16,11 +16,21 @@
     hue-rotate(14deg) brightness(106%) contrast(96%);
 }
 
+:root[data-theme="light"] .about-me-image {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
+}
+
 .about-me-logo {
   width: 70%;
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+:root[data-theme="light"] .about-me-logo {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(8%) saturate(1822%)
+    hue-rotate(356deg) brightness(97%) contrast(94%);
 }
 
 .about-me-button {

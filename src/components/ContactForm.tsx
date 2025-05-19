@@ -92,7 +92,7 @@ export default function ContactForm() {
 
       <div className="form-group">
         <label htmlFor="email">
-          Votre adresse mail <span className="required">*</span>
+          Votre adresse e-mail <span className="required">*</span>
         </label>
         <input
           type="email"

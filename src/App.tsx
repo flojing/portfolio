@@ -6,17 +6,18 @@ import Footer from "./components/Footer";
 import MyWork from "./components/MyWork";
 import NavBar from "./components/NavBar";
 import ScrollProgressBar from "./components/ScrollProgressBar";
+import { ThemeProvider } from "./services/ThemeContext";
 
 function App() {
   return (
-    <>
+    <ThemeProvider>
       <NavBar />
       <ScrollProgressBar />
       <AboutMe />
       <MyWork />
       <Contact />
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 

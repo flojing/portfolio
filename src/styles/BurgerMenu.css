@@ -261,3 +261,11 @@
   opacity: 1;
   transition-delay: 0.7s;
 }
+
+:root[data-theme="light"] .burger-circle {
+  background-color: var(--color-blue);
+}
+
+:root[data-theme="light"] .burger-line {
+  background-color: var(--color-cream);
+}
