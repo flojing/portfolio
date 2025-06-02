@@ -224,3 +224,107 @@
     -webkit-tap-highlight-color: transparent;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .my-work-container {
+    padding-left: 12vw;
+    padding-right: 12vw;
+    position: relative;
+    padding-bottom: 60px;
+  }
+  .my-work-main-title,
+  .my-work-intro {
+    position: relative;
+    width: calc(100% + 12vw);
+    box-sizing: border-box;
+  }
+  .project-1-container {
+    width: calc(100% + 12vw);
+    box-sizing: border-box;
+    margin-right: -12vw;
+  }
+  .project-2-container {
+    width: calc(100% + 12vw);
+    box-sizing: border-box;
+    margin-left: -12vw;
+  }
+  .project-3-container {
+    width: calc(100% + 12vw);
+    box-sizing: border-box;
+    margin-right: -12vw;
+  }
+  .project-1-content,
+  .project-3-content {
+    display: grid;
+    grid-template-areas:
+      "image titre"
+      "image description"
+      "image keywords"
+      "image link";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    padding-right: 12vw;
+    align-items: center;
+  }
+  .project-1-image,
+  .project-3-image {
+    grid-area: image;
+    width: 25vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateX(-6vw);
+    align-self: center;
+    grid-row: 1 / span 4;
+  }
+  .project-1-content .project-title,
+  .project-2-content .project-title,
+  .project-3-content .project-title {
+    grid-area: titre;
+  }
+  .project-1-content p,
+  .project-2-content p,
+  .project-3-content p {
+    grid-area: description;
+  }
+  .project-keywords-container {
+    grid-area: keywords;
+  }
+  .project-1-content a,
+  .project-3-content a {
+    grid-area: link;
+    justify-self: end;
+  }
+  .project-2-content {
+    display: grid;
+    grid-template-areas:
+      "titre image"
+      "description image"
+      "keywords image"
+      "link image";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding-left: 12vw;
+    align-items: center;
+  }
+  .project-2-image {
+    grid-area: image;
+    width: 25vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateX(6vw);
+    align-self: center;
+    grid-row: 1 / span 4;
+  }
+  .project-2-content a {
+    grid-area: link;
+    justify-self: start;
+  }
+  .project-2-content p {
+    text-align: left;
+  }
+  .project-2-content .project-title {
+    text-align: left;
+  }
+}

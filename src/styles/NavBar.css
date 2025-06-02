@@ -48,3 +48,37 @@
 :root[data-theme="light"] .navbar-logo svg {
   color: var(--color-chocolate);
 }
+
+.navbar-right-container-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-container {
+    padding: 12px 50px;
+  }
+  .navbar-right-container-desktop {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+  }
+  .navbar-right-container-desktop a {
+    color: var(--color-cream);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  :root[data-theme="light"] .navbar-right-container-desktop a {
+    color: var(--color-chocolate);
+  }
+  .navbar-right-container-desktop .desktop-menu-contact {
+    background-color: var(--color-blue);
+    padding: 3px 20px;
+    border-radius: 20px;
+    color: var(--color-chocolate);
+  }
+  .navbar-right-container {
+    display: none;
+  }
+}

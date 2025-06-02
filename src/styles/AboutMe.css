@@ -66,3 +66,58 @@
   height: clamp(24px, 6vw, 30px);
   flex-shrink: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .about-me-container {
+    display: grid;
+    grid-template-areas:
+      "image logo"
+      "text logo"
+      "button button"
+      "tech tech";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding-left: 12vw;
+    padding-right: 12vw;
+    padding-bottom: 60px;
+  }
+  .about-me-image {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+  }
+  .about-me-logo {
+    grid-area: logo;
+    width: 20vw;
+    height: auto;
+  }
+  .about-me-text {
+    grid-area: text;
+  }
+  .about-me-button {
+    grid-area: button;
+    width: fit-content;
+    margin: 0;
+    justify-self: start;
+  }
+  .tech-logos-container {
+    grid-area: tech;
+    width: 100%;
+    max-width: 100%;
+  }
+  .about-me-button {
+    cursor: pointer;
+  }
+  .about-me-button:hover {
+    background-color: var(--color-cream);
+  }
+  :root[data-theme="light"] .about-me-button:hover {
+    background-color: var(--color-chocolate);
+    color: var(--color-cream);
+  }
+  .tech-logos-container svg {
+    width: clamp(36px, 6vw, 48px);
+    height: clamp(36px, 6vw, 48px);
+    flex-shrink: 0;
+  }
+}

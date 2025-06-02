@@ -120,12 +120,14 @@ export default function ContactForm() {
         />
       </div>
 
-      <button type="submit" className="submit-button">
-        <span>Envoyer</span>
-        <div className="button-icon">
-          <BsArrowRightCircleFill />
-        </div>
-      </button>
+      <div className="submit-button-container">
+        <button type="submit" className="submit-button">
+          <span>Envoyer</span>
+          <div className="button-icon">
+            <BsArrowRightCircleFill />
+          </div>
+        </button>
+      </div>
     </form>
   );
 }
