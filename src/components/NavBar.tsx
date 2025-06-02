@@ -15,6 +15,13 @@ export default function NavBar() {
       <div className="navbar-right-container">
         <BurgerMenu />
       </div>
+      <div className="navbar-right-container-desktop">
+        <a href="#a-propos">À propos de moi</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact" className="desktop-menu-contact">
+          Contact
+        </a>
+      </div>
     </div>
   );
 }

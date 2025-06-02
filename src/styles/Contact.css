@@ -126,3 +126,74 @@
   color: var(--color-chocolate) !important;
   opacity: 1;
 }
+
+@media screen and (min-width: 768px) {
+  .contact-container {
+    padding-left: 12vw;
+    padding-right: 12vw;
+    display: grid;
+    grid-template-areas:
+      "titre form"
+      "description form"
+      "icons form";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+  }
+  .contact-main-title {
+    grid-area: titre;
+  }
+  .contact-form-container {
+    grid-area: form;
+    justify-self: end;
+    width: 80%;
+    max-width: 700px;
+  }
+  .contact-form {
+    max-width: 700px;
+  }
+  .contact-socials {
+    grid-area: icons;
+  }
+  .contact-container p {
+    grid-area: description;
+  }
+  .contact-socials svg {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .contact-socials svg:hover {
+    transform: scale(1.2);
+  }
+  .submit-button {
+    display: inline-flex;
+    width: auto;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--color-cream);
+    padding: 8px 16px;
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: 500;
+    gap: 18px;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .submit-button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .form-group label {
+    margin-bottom: 0px;
+  }
+  .button-icon svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .submit-button:hover .button-icon svg {
+    transform: translateX(6px);
+  }
+}
