@@ -11,6 +11,12 @@ const toastSuccess = (title: string) => {
     style: {
       background: "var(--color-blue)",
       color: "var(--color-chocolate)",
+      minWidth: "350px",
+      maxWidth: "500px",
+      padding: "15px 20px 20px",
+      fontSize: "16px",
+      whiteSpace: "normal",
+      lineHeight: "1.5",
     },
   });
 };
